@@ -1,8 +1,9 @@
-import styles from '../styles/ISS.module.css';
+import styles from '../styles/Hello.module.css';
 import { NextPage } from 'next';
 import { useEffect } from 'react';
 import toast from 'react-hot-toast';
 import { useCompany } from '../lib/api';
+import Image from 'next/image';
 
 const Hello: NextPage = () => {
   const { data: companyData, error: companyError } = useCompany(3000);
@@ -39,6 +40,14 @@ const Hello: NextPage = () => {
         ) : (
           'loading'
         )}
+      </a>
+      <a className={styles.card}>
+        <Image
+          src="/nextjs-logo.png"
+          alt="nextjs"
+          width="512px"
+          height="309px"
+        />
       </a>
     </div>
   );
